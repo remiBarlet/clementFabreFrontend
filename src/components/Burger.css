@@ -1,0 +1,92 @@
+.burger {
+    height: 1em;
+    width: 1em;
+    position: relative;
+    cursor: pointer;
+    -webkit-transition: .2s all;
+    -o-transition: .2s all;
+    transition: .2s all;
+    -webkit-tap-highlight-color: transparent; 
+}
+    
+.burger .burger-lines:after {
+  left: 0;
+  top: -1em; 
+}
+
+.burger .burger-lines:before {
+  left: 0;
+  top: 1em; 
+}
+
+.burger:after {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 150%;
+  width: 150%;
+  top: -25%;
+  left: -25%; 
+}
+
+.burger .burger-lines {
+  top: 50%;
+}
+
+.burger .burger-lines, .burger .burger-lines:after, .burger .burger-lines:before {
+    pointer-events: none;
+    display: block;
+    content: '';
+    width: 100%;
+    border-radius: 0.25em;
+    background-color: #2e3131;
+    height: 0.125em;
+    position: absolute;
+    -webkit-transform: rotate(0);
+        -ms-transform: rotate(0);
+            transform: rotate(0); 
+}
+
+.burger .burger-lines:after {
+    left: 0;
+    top: -0.25em; 
+}
+
+.burger .burger-lines:before {
+    left: 0;
+    top: 0.25em; 
+}
+
+.burger.burger-slip .burger-lines:after, .burger.burger-slip .burger-lines:before {
+    width: 1em; 
+}
+  
+.burger.burger-slip .burger-lines, .burger.burger-slip .burger-lines:after, .burger.burger-slip .burger-lines:before {
+    -webkit-transition: all .25s;
+    -o-transition: all .25s;
+    transition: all .25s; 
+}
+  
+.burger.burger-slip.open .burger-lines {
+    -webkit-transform: translateX(-1.5em);
+    -ms-transform: translateX(-1.5em);
+    transform: translateX(-1.5em);
+    background-color: transparent; 
+}
+
+.burger.burger-slip.open .burger-lines:before, .burger.burger-slip.open .burger-lines:after {
+    left: 0.5em;
+    top: 0px; 
+}
+
+.burger.burger-slip.open .burger-lines:before {
+    -webkit-transform: translateX(1em) rotate(45deg);
+    -ms-transform: translateX(1em) rotate(45deg);
+    transform: translateX(1em) rotate(45deg); 
+}
+
+.burger.burger-slip.open .burger-lines:after {
+    -webkit-transform: translateX(1em) rotate(-45deg);
+    -ms-transform: translateX(1em) rotate(-45deg);
+    transform: translateX(1em) rotate(-45deg); 
+}
